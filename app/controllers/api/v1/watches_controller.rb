@@ -9,7 +9,7 @@ module Api
       def index
         details = @watches.map { |watch| details_watch(watch) }
 
-        render(json: { status: 'success', watches: details })
+        render(json: { status: 'success', funca: 'pos si', watches: details })
       end
 
       # GET /api/v1/watches/1
