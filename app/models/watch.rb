@@ -4,4 +4,5 @@ class Watch < ApplicationRecord
 
   # a watch can only belongs to one gender
   belongs_to :gender
+  belongs_to :brand
 end
