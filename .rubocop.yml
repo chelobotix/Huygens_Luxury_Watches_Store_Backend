@@ -7,9 +7,6 @@ AllCops:
     - '**/bin/**/*'
     - 'config.ru'
 
-Style/Documentation:
-  Enabled: false
-
 Style/FrozenStringLiteralComment:
   Enabled: false
 
