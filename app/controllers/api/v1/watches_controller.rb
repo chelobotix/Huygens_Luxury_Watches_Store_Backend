@@ -1,5 +1,6 @@
 module Api
   module V1
+    # WatchesController
     class WatchesController < ApplicationController
       before_action :set_watch, only: %i[show update destroy]
       before_action :set_watches, only: %i[index]
@@ -19,7 +20,7 @@ module Api
       # POST /api/v1/watches
       # POST /api/v1/watches.json
       def create
-        @watch = Watch.new(watch_params)
+        @watch = ::Watch.new(watch_params)
 
         if @watch.save
           render(:show, status: :created, location: @watch)
@@ -46,18 +47,18 @@ module Api
 
       # Return Genre
       def genre
-        Rails.logger.debug(watches.genre_id)
+        ::Rails.logger.debug(watches.genre_id)
       end
 
       private
 
       # Use callbacks to share common setup or constraints between actions.
       def set_watch
-        @watch = Watch.find(params[:id])
+        @watch = ::Watch.find(params[:id])
       end
 
       def set_watches
-        @watches = Watch.all
+        @watches = ::Watch.all
       end
 
       # Only allow a list of trusted parameters through.
